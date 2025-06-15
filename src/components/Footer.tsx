@@ -1,8 +1,17 @@
 
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/917355518761', '_blank');
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-gray-900 text-white font-montserrat">
       {/* CTA Section */}
@@ -13,10 +22,16 @@ const Footer = () => {
             Have Any Queries?
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+            <Button 
+              onClick={handleWhatsAppClick}
+              className="bg-red-600 hover:bg-red-700 text-white transition-all duration-300 hover:scale-105 active:scale-95"
+            >
               Contact Us
             </Button>
-            <Button className="bg-red-600 hover:bg-red-700 text-white">
+            <Button 
+              onClick={handleWhatsAppClick}
+              className="bg-red-600 hover:bg-red-700 text-white transition-all duration-300 hover:scale-105 active:scale-95"
+            >
               Call Us Now
             </Button>
           </div>
@@ -41,13 +56,13 @@ const Footer = () => {
               Simplest way to put your YouTube Video in front of right Audience
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="bg-gray-800 hover:bg-red-600 p-3 rounded-lg transition-colors">
+              <a href="#" className="bg-gray-800 hover:bg-red-600 p-3 rounded-lg transition-all duration-300 hover:scale-110">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-gray-800 hover:bg-red-600 p-3 rounded-lg transition-colors">
+              <a href="#" className="bg-gray-800 hover:bg-red-600 p-3 rounded-lg transition-all duration-300 hover:scale-110">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-gray-800 hover:bg-red-600 p-3 rounded-lg transition-colors">
+              <a href="#" className="bg-gray-800 hover:bg-red-600 p-3 rounded-lg transition-all duration-300 hover:scale-110">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -59,7 +74,7 @@ const Footer = () => {
               <div>
                 <p>1st Floor, Ramansind Trade Center, 3A, A, Karpoorshala Road, Chandnigk Colony, Aljarah</p>
                 <p>Lucknow, Uttar Pradesh 226024</p>
-                <p>+91 7355018708</p>
+                <p>+91 7355518761</p>
                 <p>info@videopromotion.digital</p>
               </div>
             </div>
@@ -68,20 +83,20 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3 text-gray-300">
-              <li><a href="/" className="hover:text-red-400 transition-colors">Home</a></li>
-              <li><a href="/about" className="hover:text-red-400 transition-colors">About Us</a></li>
-              <li><a href="/services" className="hover:text-red-400 transition-colors">Services</a></li>
-              <li><a href="/contact" className="hover:text-red-400 transition-colors">Contact Us</a></li>
+              <li><Link to="/" onClick={scrollToTop} className="hover:text-red-400 transition-colors">Home</Link></li>
+              <li><Link to="/about" onClick={scrollToTop} className="hover:text-red-400 transition-colors">About Us</Link></li>
+              <li><Link to="/services" onClick={scrollToTop} className="hover:text-red-400 transition-colors">Services</Link></li>
+              <li><Link to="/contact" onClick={scrollToTop} className="hover:text-red-400 transition-colors">Contact Us</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Service</h3>
             <ul className="space-y-3 text-gray-300">
-              <li>YouTube Views</li>
-              <li>YouTube Subscribers</li>
-              <li>YouTube WatchTime</li>
-              <li>YouTube Revenue</li>
+              <li><Link to="/about" onClick={scrollToTop} className="hover:text-red-400 transition-colors">YouTube Views</Link></li>
+              <li><Link to="/about" onClick={scrollToTop} className="hover:text-red-400 transition-colors">YouTube Subscribers</Link></li>
+              <li><Link to="/about" onClick={scrollToTop} className="hover:text-red-400 transition-colors">YouTube WatchTime</Link></li>
+              <li><Link to="/about" onClick={scrollToTop} className="hover:text-red-400 transition-colors">YouTube Revenue</Link></li>
             </ul>
           </div>
         </div>
