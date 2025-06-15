@@ -7,14 +7,6 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsOpen(false);
-  };
-
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50 font-montserrat">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,12 +26,9 @@ const Navbar = () => {
               <Link to="/services" className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-colors">
                 SERVICES
               </Link>
-              <button 
-                onClick={() => scrollToSection('pricing')}
-                className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-colors"
-              >
+              <Link to="/pricing" className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-colors">
                 PRICING
-              </button>
+              </Link>
               <Link to="/contact" className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-colors">
                 CONTACT US
               </Link>
@@ -65,22 +54,19 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <Link to="/" className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium">
+              <Link to="/" className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium" onClick={() => setIsOpen(false)}>
                 HOME
               </Link>
-              <Link to="/about" className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium">
+              <Link to="/about" className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium" onClick={() => setIsOpen(false)}>
                 ABOUT US
               </Link>
-              <Link to="/services" className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium">
+              <Link to="/services" className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium" onClick={() => setIsOpen(false)}>
                 SERVICES
               </Link>
-              <button 
-                onClick={() => scrollToSection('pricing')}
-                className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium w-full text-left"
-              >
+              <Link to="/pricing" className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium" onClick={() => setIsOpen(false)}>
                 PRICING
-              </button>
-              <Link to="/contact" className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium">
+              </Link>
+              <Link to="/contact" className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium" onClick={() => setIsOpen(false)}>
                 CONTACT US
               </Link>
               <Button className="bg-red-600 hover:bg-red-700 text-white w-full mt-4">
