@@ -7,6 +7,14 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50 font-montserrat">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,6 +34,12 @@ const Navbar = () => {
               <Link to="/services" className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-colors">
                 SERVICES
               </Link>
+              <button 
+                onClick={() => scrollToSection('pricing')}
+                className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-colors"
+              >
+                PRICING
+              </button>
               <Link to="/contact" className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-colors">
                 CONTACT US
               </Link>
@@ -60,6 +74,12 @@ const Navbar = () => {
               <Link to="/services" className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium">
                 SERVICES
               </Link>
+              <button 
+                onClick={() => scrollToSection('pricing')}
+                className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium w-full text-left"
+              >
+                PRICING
+              </button>
               <Link to="/contact" className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium">
                 CONTACT US
               </Link>
