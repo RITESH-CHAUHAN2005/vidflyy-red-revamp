@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative bg-gradient-to-br from-red-50 to-white py-20 lg:py-32">
+    <section id="home" className="relative bg-gradient-to-br from-red-50 to-white py-20 lg:py-32 font-montserrat">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
