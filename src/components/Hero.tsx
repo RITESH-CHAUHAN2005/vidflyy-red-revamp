@@ -1,12 +1,50 @@
 
-import { Play, TrendingUp, Users } from "lucide-react";
+import { Play, TrendingUp, Users, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/917355518761', '_blank');
+  };
+
   return (
-    <section id="home" className="relative bg-gradient-to-br from-red-50 to-white py-20 lg:py-32 font-montserrat">
+    <section id="home" className="relative bg-gradient-to-br from-red-50 to-white py-20 lg:py-32 font-montserrat overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      
+      {/* Floating Video Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 bg-white rounded-lg shadow-lg p-4 animate-pulse opacity-70">
+          <div className="flex items-center gap-2 mb-2">
+            <Youtube className="h-4 w-4 text-red-600" />
+            <span className="text-xs font-medium">Live Streaming</span>
+          </div>
+          <div className="w-24 h-16 bg-gradient-to-r from-red-100 to-red-200 rounded flex items-center justify-center">
+            <Play className="h-6 w-6 text-red-600" />
+          </div>
+        </div>
+        
+        <div className="absolute top-32 right-20 bg-white rounded-lg shadow-lg p-4 animate-bounce opacity-60">
+          <div className="flex items-center gap-2 mb-2">
+            <TrendingUp className="h-4 w-4 text-green-600" />
+            <span className="text-xs font-medium">Views Growing</span>
+          </div>
+          <div className="w-28 h-18 bg-gradient-to-r from-green-100 to-green-200 rounded flex items-center justify-center">
+            <span className="text-lg font-bold text-green-600">+247%</span>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-32 left-1/4 bg-white rounded-lg shadow-lg p-4 animate-pulse opacity-50">
+          <div className="flex items-center gap-2 mb-2">
+            <Users className="h-4 w-4 text-blue-600" />
+            <span className="text-xs font-medium">Subscribers</span>
+          </div>
+          <div className="w-20 h-14 bg-gradient-to-r from-blue-100 to-blue-200 rounded flex items-center justify-center">
+            <span className="text-sm font-bold text-blue-600">12.5K</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
@@ -18,10 +56,10 @@ const Hero = () => {
               Our proven promotion strategies help content creators reach their target audience and grow faster.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg">
+              <Button onClick={handleWhatsAppClick} size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg transition-all duration-300 hover:scale-105 active:scale-95">
                 Start Promotion
               </Button>
-              <Button size="lg" variant="outline" className="border-red-600 text-red-600 hover:bg-red-50 px-8 py-4 text-lg">
+              <Button onClick={handleWhatsAppClick} size="lg" variant="outline" className="border-red-600 text-red-600 hover:bg-red-50 px-8 py-4 text-lg transition-all duration-300 hover:scale-105 active:scale-95">
                 View Packages
               </Button>
             </div>

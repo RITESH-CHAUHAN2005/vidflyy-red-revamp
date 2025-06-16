@@ -18,6 +18,10 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/917355518761', '_blank');
+  };
+
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50 font-montserrat">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,8 +35,8 @@ const Navbar = () => {
               <button onClick={() => handleNavClick("/")} className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105">
                 HOME
               </button>
-              <button onClick={() => handleNavClick("/about")} className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105">
-                ABOUT US
+              <button onClick={() => handleNavClick("/features")} className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105">
+                FEATURES
               </button>
               <button onClick={() => handleNavClick("/services")} className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105">
                 SERVICES
@@ -47,7 +51,7 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:block">
-            <Button className="bg-red-600 hover:bg-red-700 text-white transition-all duration-300 hover:scale-105 active:scale-95">
+            <Button onClick={handleWhatsAppClick} className="bg-red-600 hover:bg-red-700 text-white transition-all duration-300 hover:scale-105 active:scale-95">
               Get Started
             </Button>
           </div>
@@ -68,8 +72,8 @@ const Navbar = () => {
               <button onClick={() => handleNavClick("/")} className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300">
                 HOME
               </button>
-              <button onClick={() => handleNavClick("/about")} className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300">
-                ABOUT US
+              <button onClick={() => handleNavClick("/features")} className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300">
+                FEATURES
               </button>
               <button onClick={() => handleNavClick("/services")} className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300">
                 SERVICES
@@ -80,7 +84,7 @@ const Navbar = () => {
               <button onClick={() => handleNavClick("/contact")} className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300">
                 CONTACT US
               </button>
-              <Button className="bg-red-600 hover:bg-red-700 text-white w-full mt-4 transition-all duration-300 hover:scale-105 active:scale-95">
+              <Button onClick={handleWhatsAppClick} className="bg-red-600 hover:bg-red-700 text-white w-full mt-4 transition-all duration-300 hover:scale-105 active:scale-95">
                 Get Started
               </Button>
             </div>
