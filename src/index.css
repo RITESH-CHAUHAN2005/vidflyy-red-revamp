@@ -414,3 +414,275 @@ img {
   backface-visibility: hidden;
   perspective: 1000;
 }
+
+/* Enhanced GSAP-style animations for better performance */
+@layer utilities {
+  /* Service card animations */
+  .animate-card-rotate {
+    animation: cardRotate 0.8s ease-out forwards;
+    transform: translateY(20px) rotateX(15deg);
+    opacity: 0;
+  }
+  
+  .animate-card-float {
+    animation: cardFloat 0.6s ease-out forwards;
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  
+  .animate-icon-float {
+    animation: iconFloat 3s ease-in-out infinite;
+  }
+  
+  .animate-icon-pulse {
+    animation: iconPulse 2s ease-in-out infinite;
+  }
+  
+  .animate-text-slide-up {
+    animation: textSlideUp 0.6s ease-out forwards;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  
+  .animate-text-fade-in {
+    animation: textFadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-feature-slide-in {
+    animation: featureSlideIn 0.5s ease-out forwards;
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  
+  .animate-gradient-shift {
+    background: linear-gradient(45deg, #fee2e2, #fecaca, #fca5a5);
+    background-size: 300% 300%;
+    animation: gradientShift 4s ease infinite;
+  }
+  
+  /* Stats number animations */
+  .animate-number-count {
+    animation: numberCount 2s ease-out forwards;
+  }
+  
+  /* Pricing specific animations */
+  .animate-price-scale {
+    animation: priceScale 0.8s ease-out forwards;
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  
+  .animate-views-highlight {
+    animation: viewsHighlight 1s ease-out forwards;
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  
+  .animate-check-bounce {
+    animation: checkBounce 0.6s ease-out forwards;
+    transform: scale(0);
+  }
+  
+  .animate-button-pulse {
+    animation: buttonPulse 2s ease-in-out infinite;
+  }
+  
+  .animate-guarantee-fade {
+    animation: guaranteeFade 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-cta-bounce {
+    animation: ctaBounce 1s ease-out forwards;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  
+  /* Performance optimized animations */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-auto {
+    will-change: auto;
+  }
+}
+
+/* Enhanced keyframes for smoother animations */
+@keyframes cardRotate {
+  0% {
+    transform: translateY(20px) rotateX(15deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(5deg); }
+  50% { transform: translateY(-3px) rotate(0deg); }
+  75% { transform: translateY(-7px) rotate(-3deg); }
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes textSlideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes textFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes featureSlideIn {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes priceScale {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes viewsHighlight {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes checkBounce {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes buttonPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+}
+
+@keyframes guaranteeFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes ctaBounce {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Performance optimizations */
+.gpu-accelerated,
+.animate-card-rotate,
+.animate-card-float,
+.animate-icon-float,
+.animate-icon-pulse,
+.animate-text-slide-up,
+.animate-feature-slide-in,
+.animate-price-scale,
+.animate-views-highlight {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Responsive optimizations */
+@media (max-width: 768px) {
+  .animate-card-rotate,
+  .animate-card-float {
+    animation-duration: 0.6s;
+  }
+  
+  .animate-icon-float {
+    animation-duration: 2s;
+  }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-card-rotate,
+  .animate-card-float,
+  .animate-icon-float,
+  .animate-icon-pulse,
+  .animate-text-slide-up,
+  .animate-feature-slide-in,
+  .animate-gradient-shift,
+  .animate-price-scale,
+  .animate-views-highlight,
+  .animate-check-bounce,
+  .animate-button-pulse,
+  .animate-guarantee-fade,
+  .animate-cta-bounce {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* Optimize images */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Hardware acceleration for smooth animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
