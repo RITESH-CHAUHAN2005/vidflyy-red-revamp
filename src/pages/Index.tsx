@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import NewServices from "@/components/NewServices";
@@ -7,6 +6,9 @@ import Stats from "@/components/Stats";
 import SuccessStories from "@/components/SuccessStories";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
+import CampaignReports from "@/components/CampaignReports";
+import OurWorks from "@/components/OurWorks";
+import FeaturedPartners from "@/components/FeaturedPartners";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -20,6 +22,9 @@ const Index = () => {
       <SuccessStories />
       <Pricing />
       <Testimonials />
+      <CampaignReports />
+      <OurWorks />
+      <FeaturedPartners />
       <Footer />
     </div>
   );

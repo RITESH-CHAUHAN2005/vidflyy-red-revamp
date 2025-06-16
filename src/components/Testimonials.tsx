@@ -13,7 +13,7 @@ const Testimonials = () => {
       verified: true
     },
     {
-      name: "Sneha Sharma",
+      name: "Sneha Sharma", 
       role: "Cooking & Lifestyle",
       content: "I was skeptical about YouTube promotion services until I tried Vidflyy. The quality of subscribers I gained was incredible - real people who love cooking and comment on every video. My engagement rate increased by 400%!",
       rating: 5,
@@ -23,7 +23,7 @@ const Testimonials = () => {
     },
     {
       name: "Rohit Kumar",
-      role: "Gaming Content Creator",
+      role: "Gaming Content Creator", 
       content: "Best decision I made for my gaming channel! Vidflyy's team understood my niche perfectly. My videos now consistently get 50K+ views, and I've gained over 25K genuine gaming enthusiasts as subscribers.",
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
@@ -35,7 +35,7 @@ const Testimonials = () => {
       role: "Fashion & Beauty Influencer",
       content: "Vidflyy helped me reach my target audience perfectly. My fashion content now reaches thousands of style-conscious viewers daily. The ROI has been exceptional - I've secured multiple brand partnerships thanks to my growing reach.",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face", 
       metrics: "Multiple Brand Partnerships",
       verified: true
     },
@@ -45,7 +45,7 @@ const Testimonials = () => {
       content: "As an educator on YouTube, reaching the right students was crucial. Vidflyy's promotion strategy helped my educational videos reach thousands of motivated learners. My channel now has over 40K subscribers who actively learn from my content.",
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      metrics: "40K+ Student Subscribers",
+      metrics: "40K+ Student Subscribers", 
       verified: true
     },
     {
@@ -64,12 +64,27 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Success Stories from Our <span className="text-red-600">Creators</span>
+            Client <span className="text-red-600">Reviews</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Real results from genuine creators who transformed their channels with Vidflyy's proven promotion strategies
           </p>
-          <div className="w-24 h-1 bg-red-600 mx-auto mt-6 rounded-full"></div>
+          
+          {/* Google Partnership Badge */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-lg">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="h-6" />
+              <span className="font-semibold text-gray-700">Verified Partner</span>
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <span className="text-sm text-gray-600">4.9/5</span>
+            </div>
+          </div>
+          
+          <div className="w-24 h-1 bg-red-600 mx-auto rounded-full"></div>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -124,7 +139,7 @@ const Testimonials = () => {
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-red-600">4.9/5</div>
-              <div className="text-sm text-gray-600">Average Rating</div>
+              <div className="text-sm text-gray-600">Google Rating</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-red-600">100M+</div>
