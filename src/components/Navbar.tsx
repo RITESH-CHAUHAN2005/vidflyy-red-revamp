@@ -38,8 +38,8 @@ const Navbar = () => {
               <button onClick={() => handleNavClick("/features")} className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105">
                 FEATURES
               </button>
-              <button onClick={() => handleNavClick("/services")} className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105">
-                SERVICES
+              <button onClick={() => handleNavClick("/success-stories")} className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105">
+                SUCCESS STORIES
               </button>
               <button onClick={() => handleNavClick("/pricing")} className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105">
                 PRICING
@@ -75,8 +75,8 @@ const Navbar = () => {
               <button onClick={() => handleNavClick("/features")} className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300">
                 FEATURES
               </button>
-              <button onClick={() => handleNavClick("/services")} className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300">
-                SERVICES
+              <button onClick={() => handleNavClick("/success-stories")} className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300">
+                SUCCESS STORIES
               </button>
               <button onClick={() => handleNavClick("/pricing")} className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300">
                 PRICING

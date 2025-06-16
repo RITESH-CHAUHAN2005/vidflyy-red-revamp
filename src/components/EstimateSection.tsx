@@ -25,6 +25,12 @@ const EstimateSection = () => {
     setEstimatedSubscribers(subscribers);
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      calculateEstimate();
+    }
+  };
+
   return (
     <section className="py-20 bg-white font-montserrat">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,6 +56,7 @@ const EstimateSection = () => {
                     type="number"
                     value={budget}
                     onChange={(e) => setBudget(e.target.value)}
+                    onKeyPress={handleKeyPress}
                     placeholder="5000"
                     className="w-full pl-8 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent text-lg"
                   />

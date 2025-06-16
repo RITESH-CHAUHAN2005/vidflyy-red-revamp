@@ -1,3 +1,4 @@
+
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -17,7 +18,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="col-span-1">
             <div className="flex items-center mb-6">
-              <img src="/lovable-uploads/0b27d722-c6a7-47e3-ae7d-aeb8461db170.png" alt="Vidflyy" className="h-8 w-auto" />
+              <div className="text-white text-2xl font-bold">
+                <span className="text-red-500">Vid</span>flyy
+              </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Empowering content creators to reach their full potential through strategic YouTube promotion and organic growth solutions.
@@ -40,7 +43,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><a href="/" onClick={scrollToTop} className="text-gray-300 hover:text-red-400 transition-colors duration-300">Home</a></li>
               <li><a href="/features" onClick={scrollToTop} className="text-gray-300 hover:text-red-400 transition-colors duration-300">Features</a></li>
-              <li><a href="/services" onClick={scrollToTop} className="text-gray-300 hover:text-red-400 transition-colors duration-300">Services</a></li>
+              <li><a href="/success-stories" onClick={scrollToTop} className="text-gray-300 hover:text-red-400 transition-colors duration-300">Success Stories</a></li>
               <li><a href="/pricing" onClick={scrollToTop} className="text-gray-300 hover:text-red-400 transition-colors duration-300">Pricing</a></li>
               <li><a href="/contact" onClick={scrollToTop} className="text-gray-300 hover:text-red-400 transition-colors duration-300">Contact</a></li>
             </ul>
