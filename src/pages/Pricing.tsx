@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import EstimateSection from "@/components/EstimateSection";
 import PricingInfo from "@/components/PricingInfo";
@@ -161,13 +160,23 @@ const PricingPage = () => {
     <div className="min-h-screen bg-white font-montserrat">
       <Navbar />
       
-      {/* Hero Section for Pricing Page */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Pricing <span className="text-red-600">Plans</span>
+      {/* Hero Section for Pricing Page with animated background */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 animate-float"></div>
+          <div className="absolute top-1/2 right-20 w-16 h-16 bg-purple-200 rounded-full opacity-30 animate-bounce-gentle"></div>
+          <div className="absolute bottom-20 left-1/3 w-24 h-24 bg-blue-100 rounded-full opacity-25 animate-pulse"></div>
+          <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-purple-100 rounded-full opacity-15 animate-morph"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-28 h-28 bg-blue-150 rounded-full opacity-20 animate-scale-pulse"></div>
+          <div className="absolute top-3/4 right-1/3 w-18 h-18 bg-purple-200 rounded-full opacity-25 animate-float-delayed"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 animate-text-slide-up">
+            Pricing <span className="text-red-600 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">Plans</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-delay">
             Choose the perfect plan to grow your YouTube channel and maximize your reach.
           </p>
         </div>
@@ -190,14 +199,14 @@ const PricingPage = () => {
               </p>
 
               <div className="mb-6">
-                <label className="block text-gray-700 font-medium mb-2">Enter budget (min. ₹500)</label>
+                <label className="block text-gray-700 font-medium mb-2">Enter budget (starts from ₹0)</label>
                 <div className="flex gap-2">
                   <div className="relative flex-1">
                     <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 font-semibold">₹</span>
                     <input
                       type="number"
-                      placeholder="500"
-                      min="500"
+                      placeholder="0"
+                      min="0"
                       className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
@@ -218,7 +227,7 @@ const PricingPage = () => {
                     <Eye className="h-6 w-6 text-blue-200" />
                     <span className="text-lg font-medium">Potential Views*</span>
                   </div>
-                  <div className="text-3xl font-bold">25K - 45K</div>
+                  <div className="text-3xl font-bold">0</div>
                 </div>
 
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 animate-float-delayed">
@@ -226,7 +235,7 @@ const PricingPage = () => {
                     <Users className="h-6 w-6 text-red-300" />
                     <span className="text-lg font-medium">Potential Subscribers*</span>
                   </div>
-                  <div className="text-3xl font-bold">2,000 - 3,200</div>
+                  <div className="text-3xl font-bold">0</div>
                 </div>
 
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 animate-bounce-gentle">
@@ -234,7 +243,7 @@ const PricingPage = () => {
                     <Heart className="h-6 w-6 text-pink-300" />
                     <span className="text-lg font-medium">Potential Likes*</span>
                   </div>
-                  <div className="text-3xl font-bold">1,500 - 2,250</div>
+                  <div className="text-3xl font-bold">0</div>
                 </div>
               </div>
             </div>
