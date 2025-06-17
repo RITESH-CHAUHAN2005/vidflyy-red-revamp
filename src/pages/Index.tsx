@@ -5,7 +5,6 @@ import NewServices from "@/components/NewServices";
 import VideoShowcase from "@/components/VideoShowcase";
 import Stats from "@/components/Stats";
 import ExampleCampaign from "@/components/ExampleCampaign";
-import EstimateSection from "@/components/EstimateSection";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import CampaignReports from "@/components/CampaignReports";
@@ -20,7 +19,6 @@ const Index = () => {
       <Hero />
       <Stats />
       <ExampleCampaign />
-      <EstimateSection />
       <VideoShowcase />
       <NewServices />
       <Pricing />
