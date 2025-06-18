@@ -1,6 +1,7 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import YouTubeAdPlacements from "@/components/YouTubeAdPlacements";
+import ScrollProgress from "@/components/ScrollProgress";
 import { Play, Target, TrendingUp, Users, MessageCircle, Award, Youtube, CheckCircle } from "lucide-react";
 
 const Features = () => {
@@ -62,6 +63,8 @@ const Features = () => {
               </div>
             </div>
           </div>
+
+          <YouTubeAdPlacements />
 
           {/* Ad Types Section */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
@@ -206,6 +209,7 @@ const Features = () => {
       </section>
 
       <Footer />
+      <ScrollProgress />
     </div>
   );
 };

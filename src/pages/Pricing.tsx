@@ -1,10 +1,10 @@
-
 import Navbar from "@/components/Navbar";
 import EstimateSection from "@/components/EstimateSection";
 import PricingInfo from "@/components/PricingInfo";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import ExampleCampaign from "@/components/ExampleCampaign";
+import ScrollProgress from "@/components/ScrollProgress";
 import { Check, Users, Eye, Heart, Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -226,6 +226,7 @@ const PricingPage = () => {
       <PricingInfo />
       <FAQ />
       <Footer />
+      <ScrollProgress />
     </div>
   );
 };

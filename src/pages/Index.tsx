@@ -2,6 +2,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import NewServices from "@/components/NewServices";
+import YouTubeAdPlacements from "@/components/YouTubeAdPlacements";
 import VideoShowcase from "@/components/VideoShowcase";
 import Stats from "@/components/Stats";
 import ExampleCampaign from "@/components/ExampleCampaign";
@@ -11,6 +12,7 @@ import CampaignReports from "@/components/CampaignReports";
 import OurWorks from "@/components/OurWorks";
 import FeaturedPartners from "@/components/FeaturedPartners";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const Index = () => {
   return (
@@ -21,12 +23,14 @@ const Index = () => {
       <ExampleCampaign />
       <VideoShowcase />
       <NewServices />
+      <YouTubeAdPlacements />
       <Pricing />
       <Testimonials />
       <CampaignReports />
       <OurWorks />
       <FeaturedPartners />
       <Footer />
+      <ScrollProgress />
     </div>
   );
 };
