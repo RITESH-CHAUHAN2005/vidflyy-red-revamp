@@ -1,6 +1,6 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
 import { CheckCircle, Play, TrendingUp, Star } from "lucide-react";
 
 const SuccessStoriesPage = () => {
@@ -175,6 +175,7 @@ const SuccessStoriesPage = () => {
       </section>
 
       <Footer />
+      <ScrollProgress />
     </div>
   );
 };

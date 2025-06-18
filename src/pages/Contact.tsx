@@ -1,6 +1,6 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 
@@ -151,6 +151,7 @@ const Contact = () => {
       </section>
 
       <Footer />
+      <ScrollProgress />
     </div>
   );
 };
