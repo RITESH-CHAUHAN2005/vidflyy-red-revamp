@@ -19,15 +19,20 @@ const ScrollProgress = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
-      <div className="bg-red-600 text-white px-4 py-2 rounded-full shadow-lg font-semibold text-sm">
-        {Math.round(scrollProgress)}%
-      </div>
-      <div className="absolute inset-0 bg-red-200 rounded-full">
+    <div className="fixed bottom-0 left-0 right-0 z-50">
+      {/* Progress Bar */}
+      <div className="w-full bg-gray-200 h-1">
         <div 
-          className="bg-red-600 h-full rounded-full transition-all duration-300 ease-out"
+          className="bg-red-600 h-full transition-all duration-300 ease-out"
           style={{ width: `${scrollProgress}%` }}
         ></div>
+      </div>
+      
+      {/* Percentage Indicator */}
+      <div className="absolute bottom-2 right-4">
+        <div className="bg-red-600 text-white px-3 py-1 rounded-full shadow-lg font-semibold text-sm">
+          {Math.round(scrollProgress)}%
+        </div>
       </div>
     </div>
   );
