@@ -18,6 +18,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   line-height: 1.5;
+  font-display: swap;
 }
 
 /* Optimize images for better performance */
@@ -25,6 +26,7 @@ img {
   max-width: 100%;
   height: auto;
   loading: lazy;
+  decoding: async;
 }
 
 /* Reduce layout shifts */
@@ -37,9 +39,17 @@ video, iframe {
 button {
   cursor: pointer;
   transition: all 0.2s ease;
+  will-change: transform;
 }
 
-/* Optimize animations */
+/* GPU acceleration for animations */
+.animate-fade-in,
+.animate-slide-up,
+.animate-bounce-gentle {
+  will-change: transform, opacity;
+}
+
+/* Optimize animations for 60fps */
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
 }
@@ -52,58 +62,58 @@ button {
   animation: bounceGentle 2s ease-in-out infinite;
 }
 
-/* Performance-optimized keyframes */
+/* Performance-optimized keyframes with GPU acceleration */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate3d(0, 20px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translate3d(0, 50px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes bounceGentle {
   0%, 100% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translate3d(0, -10px, 0);
   }
 }
 
-/* GSAP-style animations for enhanced performance */
+/* GPU-accelerated animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-10px) rotate(1deg); }
-  66% { transform: translateY(5px) rotate(-1deg); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  33% { transform: translate3d(0, -10px, 0) rotate(1deg); }
+  66% { transform: translate3d(0, 5px, 0) rotate(-1deg); }
 }
 
 @keyframes pulse-slow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
+  0%, 100% { opacity: 0.4; transform: scale3d(1, 1, 1); }
+  50% { opacity: 0.8; transform: scale3d(1.05, 1.05, 1); }
 }
 
 @keyframes morph {
-  0%, 100% { border-radius: 50%; transform: rotate(0deg); }
-  50% { border-radius: 20%; transform: rotate(180deg); }
+  0%, 100% { border-radius: 50%; transform: rotate3d(0, 0, 1, 0deg); }
+  50% { border-radius: 20%; transform: rotate3d(0, 0, 1, 180deg); }
 }
 
 @keyframes rotate-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { transform: rotate3d(0, 0, 1, 0deg); }
+  to { transform: rotate3d(0, 0, 1, 360deg); }
 }
 
 @keyframes gradient-shift {
@@ -114,64 +124,119 @@ button {
 @keyframes text-slide-up {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translate3d(0, 30px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes card-float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -5px, 0); }
 }
 
 @keyframes price-scale {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.02); }
+  0%, 100% { transform: scale3d(1, 1, 1); }
+  50% { transform: scale3d(1.02, 1.02, 1); }
 }
 
 @keyframes feature-slide-in {
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translate3d(-20px, 0, 0);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes button-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%, 100% { transform: scale3d(1, 1, 1); }
+  50% { transform: scale3d(1.05, 1.05, 1); }
 }
 
-/* Apply animations */
-.animate-float { animation: float 6s ease-in-out infinite; }
-.animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
-.animate-morph { animation: morph 8s ease-in-out infinite; }
-.animate-rotate-slow { animation: rotate-slow 20s linear infinite; }
-.animate-gradient-shift { animation: gradient-shift 3s ease infinite; }
-.animate-text-slide-up { animation: text-slide-up 0.8s ease-out; }
-.animate-card-float { animation: card-float 3s ease-in-out infinite; }
-.animate-price-scale { animation: price-scale 2s ease-in-out infinite; }
-.animate-feature-slide-in { animation: feature-slide-in 0.5s ease-out forwards; }
-.animate-button-pulse { animation: button-pulse 2s ease-in-out infinite; }
-.animate-fade-in-delay { animation: fadeIn 0.8s ease-out 0.3s forwards; opacity: 0; }
-.animate-bounce-slow { animation: bounceGentle 4s ease-in-out infinite; }
+/* Apply animations with will-change for GPU acceleration */
+.animate-float { 
+  animation: float 6s ease-in-out infinite; 
+  will-change: transform;
+}
+.animate-pulse-slow { 
+  animation: pulse-slow 3s ease-in-out infinite; 
+  will-change: transform, opacity;
+}
+.animate-morph { 
+  animation: morph 8s ease-in-out infinite; 
+  will-change: transform, border-radius;
+}
+.animate-rotate-slow { 
+  animation: rotate-slow 20s linear infinite; 
+  will-change: transform;
+}
+.animate-gradient-shift { 
+  animation: gradient-shift 3s ease infinite; 
+  will-change: background-position;
+}
+.animate-text-slide-up { 
+  animation: text-slide-up 0.8s ease-out; 
+  will-change: transform, opacity;
+}
+.animate-card-float { 
+  animation: card-float 3s ease-in-out infinite; 
+  will-change: transform;
+}
+.animate-price-scale { 
+  animation: price-scale 2s ease-in-out infinite; 
+  will-change: transform;
+}
+.animate-feature-slide-in { 
+  animation: feature-slide-in 0.5s ease-out forwards; 
+  will-change: transform, opacity;
+}
+.animate-button-pulse { 
+  animation: button-pulse 2s ease-in-out infinite; 
+  will-change: transform;
+}
+.animate-fade-in-delay { 
+  animation: fadeIn 0.8s ease-out 0.3s forwards; 
+  opacity: 0; 
+  will-change: transform, opacity;
+}
+.animate-bounce-slow { 
+  animation: bounceGentle 4s ease-in-out infinite; 
+  will-change: transform;
+}
 
-/* Responsive performance optimizations */
+/* Critical resource hints */
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+}
+
+/* Contain layout for better performance */
+.section-container {
+  contain: layout style paint;
+}
+
+/* Optimize for mobile performance */
 @media (max-width: 768px) {
   .animate-card-float,
   .animate-float,
   .animate-morph {
     animation-duration: 4s;
+    animation-timing-function: ease-out;
+  }
+  
+  /* Reduce complexity on mobile */
+  .animate-gradient-shift,
+  .animate-rotate-slow {
+    animation: none;
   }
 }
 
-/* Reduce motion for accessibility */
+/* Reduce motion for accessibility and battery saving */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -179,5 +244,25 @@ button {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    will-change: auto !important;
   }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: dark light;
+  }
+}
+
+/* Critical CSS for above-the-fold content */
+.hero-section {
+  contain: layout;
+  transform: translateZ(0);
+}
+
+/* Optimize scroll performance */
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
